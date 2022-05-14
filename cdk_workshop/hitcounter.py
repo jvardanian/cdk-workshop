@@ -12,8 +12,8 @@ class HitCounter(Construct):
         return self._handler
 
     def __init__(self, scope: Construct,
-                 id: str, downstream: _lambda.IFunction, **kwargs):
-        super().__init__(scope, id, **kwargs)
+                 construct_id: str, downstream: _lambda.IFunction, **kwargs):
+        super().__init__(scope, construct_id, **kwargs)
 
         table = ddb.Table(
             self, 'Hits',
